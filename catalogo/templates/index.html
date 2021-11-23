@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}ConcesioCar {% endblock %}
+
+{% block content %}
+<h1>Indice del concesionario</h1>
+
+<hr>
+
+<h2 class="mt-4">Ultimos Modelos</h2>
+<ul>
+    {% for model in modelos %}
+    <li>{{model.modelo}}
+        {%if model.marca %}
+        ({{model.marca.nombre}})
+        {% endif %}
+
+    </li>
+
+    {% endfor %}
+</ul>
+
+
+
+{% endblock%}
