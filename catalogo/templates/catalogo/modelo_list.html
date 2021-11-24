@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Modelos{% endblock %}
+
+{% block content %}
+    <h1>Catalogo del concesionario</h1>
+    
+    <ul>
+    {% for model in modelo_list %}
+        <li><a href="/catalogo/templates/catalogo/detalle_coche{{model.id}}">
+        {%if model.marca %}
+        {{model.marca.nombre}}
+        {% endif %}
+        {{model.modelo}}
+        </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Anterior</a>
+                {% endif %}
+                <span class="page-current">
+                    Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">Siguiente</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endblock%}

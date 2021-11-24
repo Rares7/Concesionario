@@ -21,7 +21,7 @@ from catalogo.views import indice
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('catalogo/', include('catalogo.urls')),
+    path('catalogo/', include('catalogo.urls')),
     path('', indice, name='indice'),
 ] 
 

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de modelos{% endblock %}
+
+{% block content %}
+    <h1>Catalogo del Concesionario</h1>
+    
+    <ul>
+    {% for model in modelos %}
+        <li>{{model.modelo}}</li>
+
+    {% endfor %}
+    </ul>
+    
+
+
+{% endblock%}
