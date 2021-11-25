@@ -8,9 +8,8 @@ class ModelosListView(generic.ListView):
     model = Modelo
     paginate_by = 5
     
-class ModelDetailView(generic.DetailView):
-    model = Modelo
-    template_name = "detalle_coche.html"
+class MarcaDetailView(generic.DetailView):
+    model = Marca
 
     
 def indice(request):
