@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Title: {{marca}}</h1>
+  <h1>Title: {{marca.nombre}}</h1>
 
-  <p><strong>Modelo:</strong> <a>{{ marca.modelo }}</a></p> <!-- author detail link not yet defined -->
-  <p><strong>Precio:</strong> {{ modelo.precio }}</p>
+  <p><strong>Modelo:</strong> <a>{{modelo.modelo}}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Precio:</strong> {{modelo.precio}}€</p>
   <p><strong>Ciudad:</strong> {{ modelo.ciudad }}</p>
+  <p><strong>Fecha en la que se ha añadido:</strong> <a>{{marca.fecha_añadido}}</a></p>
 
  
 {% endblock %}

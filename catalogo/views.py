@@ -3,6 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from .models import Ciudad, Modelo, BookInstance, Marca
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 class ModelosListView(generic.ListView):
     model = Modelo
@@ -10,6 +12,18 @@ class ModelosListView(generic.ListView):
     
 class MarcaDetailView(generic.DetailView):
     model = Marca
+
+class AuthorCreate(CreateView):
+    model = Modelo
+    fields = '__all__'
+
+class AuthorUpdate(UpdateView):
+    model = Modelo
+    fields = '_all__'
+
+class AuthorDelete(DeleteView):
+    model = Modelo
+    success_url = reverse_lazy('modelos')
 
     
 def indice(request):
