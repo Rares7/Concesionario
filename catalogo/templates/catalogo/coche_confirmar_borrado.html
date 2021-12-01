@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Eliminar coche</h1>
+
+<p>¿Estas seguro de que quiere eliminar el modelo: {{ marca.nombre }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Si, eliminar.">
+</form>
+
+{% endblock %}

@@ -3,13 +3,12 @@ from catalogo.models import Modelo
 from django import forms
 
 
-class MarcaForm(ModelForm):
-    '''Formulario para crear autores'''
+class ModeloForm(ModelForm):
+    '''Formulario para crear coches'''
     class Meta:
         model = Modelo
         fields = '__all__'
         widgets = {
-            'Fecha en la que se añade': DateInput(attrs={'type': 'date'}),
+            'Fecha en la que se añadio': DateInput(attrs={'type': 'date'}),
         }
-    
 

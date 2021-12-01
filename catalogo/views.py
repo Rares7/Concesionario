@@ -13,16 +13,19 @@ class ModelosListView(generic.ListView):
 class MarcaDetailView(generic.DetailView):
     model = Marca
 
-class AuthorCreate(CreateView):
+class ModeloCreate(CreateView):
     model = Modelo
     fields = '__all__'
+    paginate_by = 5
 
-class AuthorUpdate(UpdateView):
+class ModeloUpdate(UpdateView):
     model = Modelo
     fields = '_all__'
+    paginate_by = 5
 
-class AuthorDelete(DeleteView):
+class ModeloDelete(DeleteView):
     model = Modelo
+    paginate_by = 5
     success_url = reverse_lazy('modelos')
 
     
@@ -30,7 +33,7 @@ def indice(request):
     """
     Función vista para la página inicio del sitio.
     """
-    datos = {'autor': 'Marca'}
+    datos = {'coche': 'Marca'}
     modelos = Modelo.objects.all().order_by('-id')[:5]
     datos['modelos'] = modelos
 
