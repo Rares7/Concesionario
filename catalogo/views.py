@@ -17,6 +17,7 @@ class ModeloCreate(CreateView):
     model = Modelo
     fields = '__all__'
     paginate_by = 5
+    success_url = '/'
 
 class ModeloUpdate(UpdateView):
     model = Modelo
