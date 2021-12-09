@@ -14,14 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # Redirección incial
-from django.views.generic import RedirectView
-from django.urls import include, path
 from django.contrib import admin
+from django.urls import include, path
 from catalogo.views import indice
+import debug_toolbar
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalogo/', include('catalogo.urls')),
     path('', indice, name='indice'),
+    path('accounts/', 
+        include('django.contrib.auth.urls')),
+
+    path('__debug__/', include(debug_toolbar.urls)),
 ] 
 

@@ -3,5 +3,14 @@
   <hr>
   <li><a href="{% url 'listado_modelos' %}">Listado de Coches</a></li>
   <li><a href="{% url 'crear_coche'%}">Crear Coche</a></li>
+  <li><a href="{% url 'modificar_coche'%}">Modificar Coche</a></li>
+  <li><a href="{% url 'eliminar_coche'%}">Eliminar Coche</a></li>
+  <hr>
+  <li><a href="{% url 'buscacoches'%}">Buscar</a></li>
+  {% if user.is_authenticated %}
+  <hr>
+  <li>{{user.username}} </li>
+  <li><a href="{% url 'logout'%}">Salir</a></li>
+  {% endif %}
 
 </ul>

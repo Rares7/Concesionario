@@ -32,7 +32,7 @@ class Modelo(models.Model):
     # ForeignKey, ya que un libro tiene un solo autor, pero el mismo autor puede haber escrito muchos libros.
     # 'Author' es un string, en vez de un objeto, porque la clase Author aún no ha sido declarada.
 
-    precio = models.TextField(max_length=1000, help_text="Ingrese el precio del coche")
+    precio = models.CharField(max_length=1000, help_text="Ingrese el precio del coche")
 
     ciudad = models.ManyToManyField(Ciudad, help_text="Seleccione una ciudad para este coche")
     # ManyToManyField, porque un género puede contener muchos libros y un libro puede cubrir varios géneros.
