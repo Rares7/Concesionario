@@ -11,13 +11,13 @@ class ModelosListView(generic.ListView):
     paginate_by = 5
     
 class MarcaDetailView(generic.DetailView):
-    model = Marca
+    model = Modelo
 
 class ModeloCreate(CreateView):
     model = Modelo
     fields = '__all__'
     paginate_by = 5
-    success_url = '/'
+    success_url = "/"
 
 class ModeloUpdate(UpdateView):
     model = Modelo
