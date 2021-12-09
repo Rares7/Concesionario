@@ -29,10 +29,10 @@
 {% else %}
 
 <ul>
-    {% for libro in libros %}
-    <li>{{libro.title}}
-        {%if libro.author %}
-        ({{libro.author.last_name}})
+    {% for modelo in modelos %}
+    <li>{{modelo.modelo}}
+        {%if modelo.marca %}
+        ({{modelo.marca.marca}})
         {% endif %}
 
     </li>
