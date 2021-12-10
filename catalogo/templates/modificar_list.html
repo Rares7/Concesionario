@@ -7,14 +7,13 @@
     
     <ul>
     {% for model in modelo_list %}
-        <li><a href="{% url 'marca_detail' model.id%}">
+        <li><a href="{% url 'modificar_coche' model.id%}">
         {%if model.marca %}
         {{model.marca.nombre}}
         {% endif %}
         {{model.modelo}}
         </a>
         </li>
-        
     {% endfor %}
     </ul>
 

@@ -13,7 +13,7 @@
         name="q" 
         class="form-control mr-sm-2" 
         type="text" 
-        placeholder="Introduce palabra título"
+        placeholder="Introduce el modelo"
         {% if query %}
             value = {{query}}
         {% endif %}
@@ -29,10 +29,10 @@
 {% else %}
 
 <ul>
-    {% for modelo in modelos %}
+    {% for modelo in modelo %}
     <li>{{modelo.modelo}}
         {%if modelo.marca %}
-        ({{modelo.marca.marca}})
+        ({{modelo.marca.nombre}})
         {% endif %}
 
     </li>

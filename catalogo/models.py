@@ -37,7 +37,7 @@ class Modelo(models.Model):
     ciudad = models.ManyToManyField(Ciudad, help_text="Seleccione una ciudad para este coche")
     # ManyToManyField, porque un género puede contener muchos libros y un libro puede cubrir varios géneros.
     # La clase Genre ya ha sido definida, entonces podemos especificar el objeto arriba.
-
+    imagen = models.ImageField(upload_to="imagenes", null=True)
     def __str__(self):
         """
         String que representa al objeto Book

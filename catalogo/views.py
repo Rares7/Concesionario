@@ -59,7 +59,7 @@ class ModeloCreate(SuccessMessageMixin, CreateView):
     success_message = "%(nombre)s %(modelo)s se ha creado correctamente"
 
 
-class ModeloUpdate(UpdateView):
+class ModeloUpdate(SuccessMessageMixin, generic.UpdateView):
     model = Modelo
     fields = '__all__'
     template_name = 'modificar_coche.html'
@@ -68,7 +68,7 @@ class ModeloUpdate(UpdateView):
     paginate_by = 5
 
 
-class ModeloDelete(DeleteView):
+class ModeloDelete(generic.DeleteView):
     model = Modelo
     success_url = '/catalago/modelos' #reverse('listado_autores')
     success_message = "El modelo se ha borrado correctamente"
